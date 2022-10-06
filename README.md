@@ -19,19 +19,37 @@ Fork and clone this repository and answer the questions as you research directly
 #### Define the following
 
 1. *Authentication*
+    - verifying a user's identity (asking for privilaged credentials -- checking those against known credentials)
 2. *Authorization*
+    - what you are allowed to do, what you have access to after logging in, or after authenticating
 3. Explain how *authentication* and *authorization* are related but distinct concepts.
+    - work in conjunction with each other, authentication is a visiable process to the user, where as authorization is not. 
 5. *Sessions vs Token based auth*
+    - session - stores the auth details on the server(information crudded in the db when the user logs in)
+    - token based auth - server checks 'tokens' on each request
 6. *json web token (also know as a jwt)*
+    - a way of transmitting information as json in a small size, three parts (header, payload, signature)
+    - used with mobile apps or desktop (web standard draft)
+    - header -- tells you how to read the information in the payload (describes the endocing standard)
+    - payload -- is readable by anyone
+    - signature lets us verify the origin of a jwt
 7. *Encoding, encryption and hashing* along with the uses for and differences between the three
+    - encoding - transformation of data, easy to check if data is complete (does not hide information)
+    - encrpytion - secure encoding of data (uses password like keys) to secure information so that only parties with the keys can see it
+    - hashing - irreversiable transformation of data that is fed throught a 'hashing function' 
 8. *oAuth* (pronounced oh-Auth)
+    - open authorization - lets a thrid party handle the authentication transaction 
 
 #### Explore and then describe the following npm packages:
 
 1. [bcrypt](https://www.npmjs.com/package/bcrypt)
+    - industry standard package in node for handiling hashing
 2. [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+    - implements full jwt standard
 3. [passport](https://www.npmjs.com/package/passport)
     * also describe what a *strategy* is in the context of this npm package
+    - passport middleware authentication package for node 
+    - strategy - one specific middle providied by passport that authenticates in one way
 
 ---
 
